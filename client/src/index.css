@@ -26,12 +26,13 @@
 
 .bestblock_space_text{
   color: #FFF;
-  font-size: 24pt;
+  font-size: 20pt;
   z-index: 0;
   padding: 10px;
 }
 
 .bestblock_square{
+  display: none;
   min-width: calc(100vw - 40px);
   height: 100vh;
   background: url("../public/img/russia.jpg");
