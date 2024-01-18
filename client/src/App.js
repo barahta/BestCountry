@@ -5,6 +5,12 @@ import React, { useState, useEffect } from 'react';
 // import React, {useEffect, useState} from "@types/react";
 
 function App() {
+
+    window.addEventListener('keyup', (e)=>{
+        if(e.key === 'Escape' || e.key === 27){
+           console.log('fuck you!')
+        }
+    })
     const [isPlaying, setPlaying] = useState(false);
     const audioPath = process.env.PUBLIC_URL + '/music/gimn.mp3'; // путь к вашему аудиофайлу
     document.title = "TestBrain";
@@ -26,6 +32,10 @@ function App() {
 
     const togglePlay = () => {
 const btn = document.getElementById('btn')
+        document.documentElement.requestFullscreen();
+
+
+
         btn.className = '';
         btn.innerHTML = '';
         const content = document.getElementById('content')
@@ -44,6 +54,7 @@ const btn = document.getElementById('btn')
                             content.innerHTML = ''
                          const gimn = document.querySelector('.bestblock_square')
                             gimn.style.display = 'flex';
+
                             // <div className="bestblock_space_btn" onClick=${{togglePlay}}>${{isPlaying ? 'STOP' : 'START'}}</div>
 
                         },time)
